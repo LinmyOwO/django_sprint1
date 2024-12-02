@@ -1,5 +1,5 @@
-{% load static %}
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Лента записей</title>
@@ -14,19 +14,19 @@
     <article>
       <ul>
         <li>
-          Место: {{ post['location'] }}
+          Место: {{ post.location }}
         </li>
         <li>
-          Дата: {{ post['date'] }}
+          Дата: {{ post.date }}
         </li>
         <li>
-          Категория: <a href="{% url 'pages:category_post' {{ post['category'] }} %}">
-            {{ post['category'] }}
+          Категория: <a href="{% url 'blog:category_post' post.category  %}">
+            {{ post.category }}
           </a>
         </li>
       </ul>
-      <p>{{ post['text']|truncatechars:10 }}</p>
-      <a href="{% url 'pages:post_detail' {{ post['id'] }} %}"
+      <p>{{ post.text|truncatewords:10 }}</p>
+      <a href="{% url 'blog:post_detail' post.id %}">Читать полный текст</a>
     </article>
   {% endfor %}                
 </div>

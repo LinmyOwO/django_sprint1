@@ -1,5 +1,5 @@
-{% load static %}
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Публикации в категории {{ category_slug }}</title>
@@ -7,6 +7,6 @@
 
 {% block content %}
 <div class="container py-5">
-  <h1>Публикации в категории personal</h1>   
+  <h1>Публикации в категории {{ category_slug }}</h1>   
 </div>
 {% endblock content %}
